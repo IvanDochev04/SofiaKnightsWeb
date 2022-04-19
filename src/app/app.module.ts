@@ -13,10 +13,14 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PlayerComponent } from './components/player/player.component';
+import { PlayerCardComponent } from './components/player-card/player-card.component';
+import { PlayerItemComponent } from './components/player-item/player-item.component';
 
 const appRoutes: Routes = [
   { path: '', component: TasksComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'players', component: PlayerComponent },
 ];
 
 @NgModule({
@@ -29,6 +33,9 @@ const appRoutes: Routes = [
     AddTaskComponent,
     AboutComponent,
     FooterComponent,
+    PlayerComponent,
+    PlayerCardComponent,
+    PlayerItemComponent,
   ],
   imports: [
     BrowserModule,

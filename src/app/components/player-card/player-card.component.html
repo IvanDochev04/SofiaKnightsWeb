@@ -1,0 +1,38 @@
+<div class="player">
+  <div>
+    <img src="{{ player.profilePictureUrl }}" alt="" />
+  </div>
+  <h3>
+    {{ player.fullName }}
+  </h3>
+  <div class="details">
+    <p class="nickname">
+      <span class="property">Nick Name</span
+      ><span class="info">{{ player.nickName }}</span>
+    </p>
+    <div>
+      <p class="row">
+        <span class="property">Birthday</span
+        ><span class="info">{{ player.birthDay }}</span>
+      </p>
+      <p class="row">
+        <span class="property">Nationality</span
+        ><span class="info">{{ player.nationality }}</span>
+      </p>
+    </div>
+    <div>
+      <p class="row">
+        <span class="property">Height</span><span class="info">{{ player.height}}</span>
+      </p>
+      <p class="row">
+        <span class="property">Weight</span><span class="info">{{ player.weight}}</span>
+      </p>
+      <p class="row">
+        <span class="property">Number</span><span class="info">{{ player.number}}</span>
+      </p>
+      <p class="row">
+        <span class="property">Positions</span><span class="info">{{ player.position}}</span>
+      </p>
+    </div>
+  </div>
+</div>
