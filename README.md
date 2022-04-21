@@ -1,29 +1,7 @@
-# Angular Crash Course 2021 (Task Tracker App)
+# Sofia Knights web page
 
-This is the project from the [YouTube crash course](https://youtu.be/3dHNOWTI7H8 "Angular Crash Course 2021"). It includes the Angular ui as well as JSON-server for our mock backend
+This is a project for AFC "Sofia Knights". It includes everything a sport club would need, such as player list, fixtures, news and more.
 
-## Usage
+Sofia Knights is a american football club in Bulgaria, founded in 2018. The club is the current champion of Bulgaria. Their goal is to create a strong community in the country and play on international level. 
 
-### Install dependencies
-
-```
-npm install
-```
-
-### Run Angular server (http://localhost:4200)
-
-```
-ng serve
-```
-
-### Run the JSON server (http://localhost:5000)
-
-```
-npm run server
-```
-
-### To build for production
-
-```
-ng build
-```
+The project contains two main parts, Angular front-end (this repo) and ASP.net REST API(https://github.com/IvanDochev04/Sofia.Knights.API).
