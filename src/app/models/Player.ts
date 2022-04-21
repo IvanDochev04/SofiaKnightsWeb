@@ -7,7 +7,7 @@ nationality : string;
 selfDiscription : string ;
 height : number ;
 weight : number ;
-position : string ;
+positions : string ;
 number : number ;
 profilePictureUrl : string ;
 
