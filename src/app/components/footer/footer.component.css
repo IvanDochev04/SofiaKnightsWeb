@@ -1,4 +1,4 @@
-.footer-menu{
+.footer-menu {
   background-color: black;
   display: flex;
   justify-content: space-between;
@@ -7,59 +7,84 @@
   padding: 40px 100px;
   height: 400px;
 }
-.footer-menu h2{
-  margin:20px 0px ;
-  border-left: 4px solid #FFB600;
+.footer-menu h2 {
+  margin: 20px 0px;
+  border-left: 4px solid #ffb600;
   color: white;
   padding: 0px 20px;
   font-weight: bold;
 }
-.about-us,.hours,.services{
+
+.about-us,
+.hours,
+.services {
   margin: 20px 60px;
   width: 28%;
 }
-.week,.saturday,.holydays{
+.about-us .img img {
+  height: 60px;
+}
+.about-us .icons a {
+  text-decoration: none;
+   color: white;
+   font-weight: bold;
+}
+.week,
+.saturday,
+.holydays {
   display: flex;
   justify-content: space-between;
 }
-.week p,.saturday p,.holydays p{
+.week p,
+.saturday p,
+.holydays p {
   margin: 5px;
 }
-.icons{
+.icons {
   display: flex;
 }
-.icons i{
-  padding-right:40px;
+.icons i {
+  padding-right: 40px;
   font-size: 30px;
 }
-.footer-menu article{
-  margin:20px 0px;
+.footer-menu article {
+  margin: 20px 0px;
 }
-.services ul{
+.footer-menu .hours p {
+  margin: 0px 0px;
+}
+.footer-menu .services p {
+  margin: 0px 0px;
+}
+.services ul {
   list-style: none;
-  padding: 0px ;
+  padding: 0px;
 }
-.services li{
+.services li {
   list-style: none;
   padding: 10px;
 }
-.services i{
-  padding-right:10px ;
+.services i {
+  padding-right: 10px;
 }
-.copyright{
+.copyright {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 40px 100px;
-  background-color: #FFB600;
+  background-color: #ffb600;
   height: 150px;
 }
-.copyright-list ul{
+.copyright-list ul {
   display: flex;
-  
 }
-.copyright-list ul li{
+.copyright-list ul li {
   list-style: none;
   margin: 20px;
-  
+}
+.copyright-list ul li a{
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  color: black;
 }

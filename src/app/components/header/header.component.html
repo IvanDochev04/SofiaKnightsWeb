@@ -80,7 +80,13 @@
           </a>
         </li>
         <li>
-          <a href="">CONTACT</a>
+          <a
+            [ngStyle]="{ color: hasRoute('/about') ? '#FFB600' : 'white' }"
+            href="/about"
+          >
+            ABOUT US
+            <i class="fas fa-chevron-down"></i>
+          </a>
         </li>
       </ul>
     </article>
