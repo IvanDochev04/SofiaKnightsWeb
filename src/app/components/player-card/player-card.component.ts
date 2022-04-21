@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Player } from 'src/app/models/Player';
+import { PlayerService } from 'src/app/services/player-service.service';
 
 @Component({
   selector: 'app-player-card',
@@ -7,11 +9,22 @@ import { Player } from 'src/app/models/Player';
   styleUrls: ['./player-card.component.css']
 })
 export class PlayerCardComponent implements OnInit {
-  @Input() player: Player;
-  constructor() { }
-
+  id:string;
+  player: Player;
+  constructor(private playerService: PlayerService,
+     private activatedRoute : ActivatedRoute,
+      private router: Router) { }
+sub;
   ngOnInit(): void {
+    this.sub = this.activatedRoute.paramMap.subscribe(params => this.id = params.get('id'))
+    this.playerService.getPlayer(+this.id).subscribe((player)=> this.player=player);
     console.log(this.player);
   }
-
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+  
+  onBack(): void {
+     this.router.navigate(['/players']);
+  }
 }

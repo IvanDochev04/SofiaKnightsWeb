@@ -1,4 +1,65 @@
-footer {
-  margin-top: 30px;
-  text-align: center;
+.footer-menu{
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: gray;
+  padding: 40px 100px;
+  height: 400px;
+}
+.footer-menu h2{
+  margin:20px 0px ;
+  border-left: 4px solid #FFB600;
+  color: white;
+  padding: 0px 20px;
+  font-weight: bold;
+}
+.about-us,.hours,.services{
+  margin: 20px 60px;
+  width: 28%;
+}
+.week,.saturday,.holydays{
+  display: flex;
+  justify-content: space-between;
+}
+.week p,.saturday p,.holydays p{
+  margin: 5px;
+}
+.icons{
+  display: flex;
+}
+.icons i{
+  padding-right:40px;
+  font-size: 30px;
+}
+.footer-menu article{
+  margin:20px 0px;
+}
+.services ul{
+  list-style: none;
+  padding: 0px ;
+}
+.services li{
+  list-style: none;
+  padding: 10px;
+}
+.services i{
+  padding-right:10px ;
+}
+.copyright{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 100px;
+  background-color: #FFB600;
+  height: 150px;
+}
+.copyright-list ul{
+  display: flex;
+  
+}
+.copyright-list ul li{
+  list-style: none;
+  margin: 20px;
+  
 }

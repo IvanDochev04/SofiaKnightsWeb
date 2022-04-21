@@ -21,6 +21,7 @@ const appRoutes: Routes = [
   { path: '', component: TasksComponent },
   { path: 'about', component: AboutComponent },
   { path: 'players', component: PlayerComponent },
+  { path: 'player/:id', component: PlayerCardComponent },
 ];
 
 @NgModule({
