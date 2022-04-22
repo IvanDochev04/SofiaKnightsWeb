@@ -1,0 +1,7 @@
+<div class="playerContainer">
+  <app-player-item
+    *ngFor="let player of players"
+    [player]="player"
+    (onClick)="redirectToPlayerCard(player)"
+  ></app-player-item>
+</div>

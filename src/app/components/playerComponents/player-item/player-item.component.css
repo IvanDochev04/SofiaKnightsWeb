@@ -1,0 +1,32 @@
+.player {
+    background: #f4f4f4;
+    margin: 0px 40px;
+    padding: 10px 20px;
+    cursor: pointer;
+    height: 370px;
+    width: 250px;
+  }
+  
+  .player .card
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: inherit;
+  }
+  .player .card .img
+  {
+height: 250px;
+  }
+  .player .card .img img{
+height: inherit;
+  }
+  .player h3 {
+    
+    justify-content: space-between;
+  }
+  .player p {
+    margin: 0px;
+  }
+  

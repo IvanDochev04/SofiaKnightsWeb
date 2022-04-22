@@ -1,0 +1,78 @@
+.contacts{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+height: 100px;
+width: 100%;
+padding: 10px 200px;
+}
+
+.contacts-info{
+  display: flex;
+  align-items: center;
+}
+.contacts-info >article{
+  margin: 0px 20px;
+}
+
+.contacts-info-phone{
+  padding-right: 20px;
+  border-right: 1px solid lightgrey;
+}
+.contacts-info-email{
+  padding-right: 20px;
+  border-right: 1px solid lightgrey;
+}
+.contacts-info-certificate{
+  padding-right: 20px;
+  
+}
+
+.contacts .text{
+  margin-top: 0px;
+  color: grey;
+}
+.contacts .info{
+  margin-bottom: 0px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.contacts .info{
+  color: black;
+  font-weight: bold;
+}
+
+.contacts-img img{
+  height: 75px;
+}
+
+.menu{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #23282D;
+  padding: 10px 200px;
+color: white;
+}
+.menu ul{
+  padding: 0px;
+}
+
+.menu li{
+  list-style: none;
+  padding: 0px 30px 0px 0px ;
+ 
+}
+.menu li a{
+text-decoration: none;
+ color: white;
+ font-weight: bold;
+}
+
+.menu-options ul{
+  display: flex;
+}
+.menu-search{
+  color: grey;
+}

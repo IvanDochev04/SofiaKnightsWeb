@@ -1,0 +1,92 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+height: 600px;
+    width: 100%;
+    background-image: url("../../../../assets/team_dark.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.container section{
+    width: 650px;
+    margin: 5px 5px;
+    background-color: rgb(0,0,0, 0.75);
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 550px;
+
+}
+
+.container section h2{
+  border-left: 4px solid  orange;
+  border-right: 4px solid  orange;
+width: 50%;
+  color: white;
+  text-align: center;
+  
+}
+.container .text{
+    color: gray;
+    padding: 10px;
+
+    font-size: 18px;
+    
+}
+.about .text p{
+    margin: 0px;
+    
+}
+.about .img img{
+width: inherit;
+
+}
+.about .img{
+    width: inherit;
+}
+.moto .text div
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+}
+.moto .vertues{
+
+width: 600px;
+margin: 0px 15px 100px 15px ;}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.list .person{
+    height: 120px;
+margin: 15px;
+flex-direction: row;
+display: flex;
+justify-content: space-between;
+}
+.list .img {
+    height: inherit;
+    padding-right:15px ;
+}
+.list .img img{
+    height: inherit;
+    border-radius: 50%;
+}
+.list .person h3{
+    margin-top: 5px;
+}
+.list .person p{
+    margin: 0px;
+}

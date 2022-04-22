@@ -1,0 +1,8 @@
+.playerContainer
+{
+    display: flex;
+    justify-content: left;
+    align-items:flex-start;
+    flex-direction: row;
+    margin: 40px 60px;
+}
