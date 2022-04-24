@@ -1,0 +1,37 @@
+.news {
+    background: #f4f4f4;
+    margin: 0px 40px;
+    padding: 10px 20px;
+    cursor: pointer;
+    height: 400px;
+    width: 550px;
+  }
+  
+  .news .item
+  {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    height: inherit;
+    padding: 20px;
+  }
+  .news .item .img
+  {
+height: 250px;
+  }
+  .news .item .img img{
+height: inherit;
+  }
+  .news h3 {
+    
+    justify-content: space-between;
+  }
+  .news p {
+    margin: 0px;
+  }
+  .news p date{
+    margin-bottom: 10px;
+    justify-self: start;
+  }
+  

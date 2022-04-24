@@ -3,4 +3,5 @@ export interface NewsList {
   title: string;
   shortDescription: string;
   date: string;
+  pictureUrl: string;
 }

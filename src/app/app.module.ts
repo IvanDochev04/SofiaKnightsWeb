@@ -18,12 +18,16 @@ import { PlayerCardComponent } from './components/playerComponents/player-card/p
 import { PlayerItemComponent } from './components/playerComponents/player-item/player-item.component';
 import { HomeComponent } from './components/common/home/home.component';
 import { NewsComponent } from './components/newsComponents/news/news.component';
+import { NewsCardComponent } from './components/newsComponents/news-card/news-card.component';
+import { NewsItemComponent } from './components/newsComponents/news-item/news-item.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'players', component: PlayerComponent },
   { path: 'player/:id', component: PlayerCardComponent },
+  { path: 'news', component: NewsComponent },
+  { path: 'news/:id', component: NewsCardComponent },
 ];
 
 @NgModule({
@@ -41,6 +45,8 @@ const appRoutes: Routes = [
     PlayerItemComponent,
     HomeComponent,
     NewsComponent,
+    NewsItemComponent,
+    NewsCardComponent,
   ],
   imports: [
     BrowserModule,

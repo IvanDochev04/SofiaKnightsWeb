@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { NewsList } from 'src/app/models/NewsList';
 
 @Component({
   selector: 'app-news-item',
   templateUrl: './news-item.component.html',
-  styleUrls: ['./news-item.component.css']
+  styleUrls: ['./news-item.component.css'],
 })
 export class NewsItemComponent implements OnInit {
+  @Input() news: NewsList;
+  @Output() onClick: EventEmitter<NewsList> = new EventEmitter();
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  onNewsClick(news) {
+    console.log("click")
+    this.onClick.emit(news);
   }
-
 }

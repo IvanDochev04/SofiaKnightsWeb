@@ -1,0 +1,30 @@
+.card{
+    margin: 30px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+padding: 10px;
+    color: grey;
+    height: fit-content;
+}
+.img {
+    width: 80%;
+    text-align: center;
+}
+.img img{
+    width: inherit;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width:  80%;
+
+}
+.info h1{
+    font-size: 40px;
+    margin: 5px;
+    color: orange;
+}

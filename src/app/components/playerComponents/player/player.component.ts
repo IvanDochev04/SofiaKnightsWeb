@@ -16,6 +16,7 @@ export class PlayerComponent implements OnInit {
     this.playerService
       .getPlayersList()
       .subscribe((players) => (this.players = players));
+      console.log(this.players)
   }
   redirectToPlayerCard(player): void {
     console.log(player);

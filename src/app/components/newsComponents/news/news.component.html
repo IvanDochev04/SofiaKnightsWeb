@@ -1,1 +1,7 @@
-<p>news works!</p>
+<div class="newsContainer">
+  <app-news-item
+    *ngFor="let news of newsList"
+    [news]="news"
+    (onClick)="redirectToNewsCard(news)"
+  ></app-news-item>
+</div>

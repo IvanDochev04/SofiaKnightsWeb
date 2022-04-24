@@ -1,1 +1,12 @@
-<p>news-item works!</p>
+<div class="news" (dblclick)="onNewsClick(news)">
+  <div class="item">
+    <div class="img">
+<img src="../../../../assets/{{news.pictureUrl}}" alt="">
+    </div>
+    <h3>
+      {{ news.title }}
+    </h3>
+    <p class="date">{{ news.date }}</p>
+    <p>{{ news.shortDescription }}</p>
+  </div>
+</div>

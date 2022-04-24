@@ -16,7 +16,6 @@ const httpOptions = {
 })
 export class NewsService {
   private apiUrl = 'https://localhost:44346/News';
-
   constructor(private http: HttpClient) {}
 
   getNewsList(): Observable<NewsList[]> {
