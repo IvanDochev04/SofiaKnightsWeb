@@ -20,14 +20,26 @@ import { HomeComponent } from './components/common/home/home.component';
 import { NewsComponent } from './components/newsComponents/news/news.component';
 import { NewsCardComponent } from './components/newsComponents/news-card/news-card.component';
 import { NewsItemComponent } from './components/newsComponents/news-item/news-item.component';
+import { FixtureComponent } from './components/fixtureComponents/fixture/fixture.component';
+import { FixtureItemComponent } from './components/fixtureComponents/fixture-item/fixture-item.component';
+import { AddPlayerComponent } from './components/playerComponents/add-player/add-player.component';
+import { UpdatePlayerComponent } from './components/playerComponents/update-player/update-player.component';
+import { UpdateNewsComponent } from './components/newsComponents/update-news/update-news.component';
+import { AddNewsComponent } from './components/newsComponents/add-news/add-news.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'players', component: PlayerComponent },
   { path: 'player/:id', component: PlayerCardComponent },
+  { path: 'addPlayer', component: AddPlayerComponent },
   { path: 'news', component: NewsComponent },
   { path: 'news/:id', component: NewsCardComponent },
+  { path: 'fixtures', component: FixtureComponent },
+  { path: 'updatePlayer/:id', component: UpdatePlayerComponent },
+
+
+  
 ];
 
 @NgModule({
@@ -47,6 +59,12 @@ const appRoutes: Routes = [
     NewsComponent,
     NewsItemComponent,
     NewsCardComponent,
+    FixtureComponent,
+    FixtureItemComponent,
+    AddPlayerComponent,
+    UpdatePlayerComponent,
+    UpdateNewsComponent,
+    AddNewsComponent,
   ],
   imports: [
     BrowserModule,

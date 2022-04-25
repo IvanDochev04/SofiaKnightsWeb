@@ -1,0 +1,29 @@
+.fixture
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgray;
+    margin: 10px;
+    width: 1400px;
+}
+.hometeam,.awayteam{
+    display: flex;
+justify-content: space-evenly;
+align-items: center;
+width: 400px;
+}
+.img{
+    height: 100px;
+    margin: 10px;
+}
+
+.img img{
+    height: inherit;
+}
+.info{
+    align-items: center;
+    text-align: center;
+width: 400px;
+
+}
