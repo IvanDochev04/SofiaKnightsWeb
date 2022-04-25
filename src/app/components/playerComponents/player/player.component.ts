@@ -10,16 +10,20 @@ import { PlayerService } from '../../../services/player-service.service';
 })
 export class PlayerComponent implements OnInit {
   players: Player[] = [];
-  constructor(private playerService: PlayerService, private router: Router) {}
+  constructor(private playerService: PlayerService, private router: Router) {
+    this.playerService
+    .getPlayersList()
+    .subscribe((players) => (this.players = players));
+  }
 
   ngOnInit(): void {
-    this.playerService
-      .getPlayersList()
-      .subscribe((players) => (this.players = players));
-      console.log(this.players)
+   
   }
   redirectToPlayerCard(player): void {
     console.log(player);
 this.router.navigate([`/player/${player.id}`]);
+  }
+  redirectToAddPlayer(){
+    this.router.navigate([`/addPlayer`]);
   }
 }

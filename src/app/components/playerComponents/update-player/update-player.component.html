@@ -1,0 +1,115 @@
+<form class="add-form" (ngSubmit)="onSubmit()">
+    <div class="column">
+  <div class="form-control">
+    <label for="fullName">Full Name</label>
+    <input
+      type="text"
+      name="fullName"
+      [(ngModel)]="player.fullName"
+      id="fullName"
+      placeholder="Add Full Name"
+    />
+  </div>
+  <div class="form-control">
+    <label for="nickName">Nickname</label>
+    <input
+      type="text"
+      name="nickName"
+      [(ngModel)]="player.nickName"
+      id="nickName"
+      placeholder="Add Nickname"
+
+    />
+  </div>
+  <div class="form-control form-control-check">
+    <label for="birthDay">BirthDay</label>
+    <input
+      type="date"
+      name="birthDay"
+      [(ngModel)]="player.birthDay"
+      id="birthDay"
+    />
+  </div>
+  <div class="form-control">
+    <label for="nationality">Nationality</label>
+    <input
+      type="text"
+      name="nationality"
+      [(ngModel)]="player.nationality"
+      id="nationality"
+      placeholder="Add nationality"
+    />
+  </div>
+  <div class="form-control selfdesc">
+    <label for="selfDiscription">Self Description</label>
+    <textarea
+      type="text"
+      name="selfDiscription"
+      [(ngModel)]="player.selfDiscription"
+      id="selfDiscription"
+      placeholder="Add self description"
+    ></textarea>
+  </div>
+</div>
+<div class="column">
+  <div class="form-control">
+    <label for="height">Height</label>
+    <input
+      type="number"
+      name="height"
+      [(ngModel)]="player.height"
+      id="height"
+      placeholder="0"
+    />
+  </div>
+  <div class="form-control">
+    <label for="weight">Weight</label>
+    <input
+      type="Number"
+      name="weight"
+      [(ngModel)]="player.weight"
+      id="weight"
+      placeholder="0"
+    />
+  </div>
+  <div class="form-control">
+    <label for="positions">Positions</label>
+    <input
+      type="text"
+      name="positions"
+      [(ngModel)]="player.positions"
+      id="positions"
+      placeholder="Add positions"
+    />
+  </div>
+  <div class="form-control">
+    <label for="number">Number</label>
+    <input
+      type="number"
+      name="number"
+      [(ngModel)]="player.number"
+      id="number"
+      placeholder="0"
+    />
+  </div>
+  <div class="form-control">
+    <label for="profilePictureUrl">Profile picture file name</label>
+    <input
+      type="text"
+      name="profilePictureUrl"
+      [(ngModel)]="player.profilePictureUrl"
+      id="profilePictureUrl"
+      placeholder="Choose pic name from assets folder"
+    />
+  </div>
+</div>
+<div class="buttons">
+<input type="submit" value="Update" class="btn btn-block" />
+<app-button
+color="red"
+text="Cancel"
+(btnClick)="onBack()">
+
+</app-button>
+</div>
+</form>

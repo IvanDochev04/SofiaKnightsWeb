@@ -37,6 +37,7 @@ export class PlayerService {
 
   createPlayer(player: Player): Observable<Player> {
     const url = `${this.apiUrl}/create`;
-    return this.http.post<Player>(this.apiUrl, player, httpOptions);
+    console.log('Creating player')
+    return this.http.post<Player>(url, player, httpOptions);
   }
 }

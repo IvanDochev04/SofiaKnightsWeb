@@ -27,4 +27,13 @@ sub;
   onBack(): void {
      this.router.navigate(['/players']);
   }
+  onDelete(player){
+    if(confirm('Do you want to delete this player?')){
+this.playerService.deletePlayer(player).subscribe()
+this.router.navigate(['/players'])}
+  }
+  onUpdate()
+  {
+this.router.navigate([`/updatePlayer/${this.id}`])
+  }
 }
