@@ -1,4 +1,8 @@
 <div class="newsContainer">
+  <app-button
+  (btnClick)="redirectToCreateNews()"
+  text="Add">
+  </app-button>
   <app-news-item
     *ngFor="let news of newsList"
     [news]="news"

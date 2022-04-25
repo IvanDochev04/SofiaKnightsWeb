@@ -22,4 +22,8 @@ export class NewsComponent implements OnInit {
     console.log(news);
     this.router.navigate([`/news/${news.id}`]);
   }
+  redirectToCreateNews(){
+    this.router.navigate([`/addNews`]);
+
+  }
 }
