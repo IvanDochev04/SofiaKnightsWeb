@@ -28,3 +28,6 @@ padding: 10px;
     margin: 5px;
     color: orange;
 }
+.content p{
+    white-space: pre-line;
+}

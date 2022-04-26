@@ -1,1 +1,52 @@
-<p>update-news works!</p>
+<div class="back">
+    <app-button
+    color="red"
+    text="Cancel"
+    (btnClick)="onBack()"
+    ></app-button>
+    </div>
+    <form class="add-form" (ngSubmit)="onSubmit()">
+      <div class="form-control">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          name="title"
+          [(ngModel)]="news.title"
+          id="title"
+          placeholder="Add title"
+        />
+      </div>
+      <div class="form-control">
+        <label for="shortDescription">Short Description</label>
+        <input
+          type="text"
+          name="shortDescription"
+          [(ngModel)]="news.shortDescription"
+          id="shortDescription"
+          placeholder="Add short description"
+        />
+      </div>
+    
+      <div class="form-control selfdesc">
+        <label for="content">Content</label>
+        <textarea
+          type="text"
+          name="content"
+          [(ngModel)]="news.content"
+          id="content"
+          placeholder="Add content"
+        ></textarea>
+      </div>
+      <div class="form-control">
+        <label for="pictureUrl">Picture file name</label>
+        <input
+          type="text"
+          name="pictureUrl"
+          [(ngModel)]="news.pictureUrl"
+          id="pictureUrl"
+          placeholder="Choose pic name from assets folder"
+        />
+        <input type="submit" value="Update" class="btn btn-block" />
+      </div>
+    </form>
+    

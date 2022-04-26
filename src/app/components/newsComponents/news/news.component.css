@@ -4,4 +4,9 @@
   align-items: flex-start;
   flex-direction: row;
   margin: 40px 60px;
+  flex-wrap: wrap;
+}
+
+.btn{
+margin: 10px;
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Player } from 'src/app/models/Player';
 import { PlayerService } from 'src/app/services/player-service.service';
+import { TextService } from 'src/app/services/text.service';
 
 @Component({
   selector: 'app-update-player',
@@ -14,7 +15,8 @@ export class UpdatePlayerComponent implements OnInit {
   constructor(
     private playerService: PlayerService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private textService: TextService
   ) {}
 
   sub;
@@ -22,16 +24,19 @@ export class UpdatePlayerComponent implements OnInit {
     this.sub = this.activatedRoute.paramMap.subscribe(
       (params) => (this.id = params.get('id'))
     );
-    this.playerService
-      .getPlayer(+this.id)
-      .subscribe((player) => (this.player = player));
+    this.playerService.getPlayer(+this.id).subscribe((player) => {
+      this.player = player;
+      player.selfDiscription = this.textService.unescape(
+        player.selfDiscription
+      );
+    });
   }
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
   onBack(): void {
-    this.router.navigate(['/players']);
- }
+    this.router.navigate([`/players/${this.id}`]);
+  }
   onSubmit() {
     if (!this.player.fullName) {
       alert('Please add a Full Name!');
@@ -72,7 +77,7 @@ export class UpdatePlayerComponent implements OnInit {
       nickName: this.player.nickName,
       birthDay: this.player.birthDay,
       nationality: this.player.nationality,
-      selfDiscription: this.player.selfDiscription,
+      selfDiscription: this.textService.escape(this.player.selfDiscription),
       height: this.player.height,
       weight: this.player.weight,
       positions: this.player.positions,

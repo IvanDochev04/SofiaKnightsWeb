@@ -30,16 +30,18 @@ import { AddNewsComponent } from './components/newsComponents/add-news/add-news.
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
+
   { path: 'players', component: PlayerComponent },
   { path: 'player/:id', component: PlayerCardComponent },
   { path: 'addPlayer', component: AddPlayerComponent },
-  { path: 'news', component: NewsComponent },
-  { path: 'news/:id', component: NewsCardComponent },
-  { path: 'fixtures', component: FixtureComponent },
   { path: 'updatePlayer/:id', component: UpdatePlayerComponent },
 
+  { path: 'news', component: NewsComponent },
+  { path: 'news/:id', component: NewsCardComponent },
+  { path: 'addNews', component: AddNewsComponent },
+  { path: 'updateNews/:id', component: UpdateNewsComponent },
 
-  
+  { path: 'fixtures', component: FixtureComponent },
 ];
 
 @NgModule({

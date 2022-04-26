@@ -26,4 +26,12 @@ sub;
   onBack(): void {
      this.router.navigate(['/news']);
   }
+  onDelete(news){
+    console.log('deleted')
+    this.newsService.deleteNews(news).subscribe();
+    this.router.navigate(['/news'])
+  }
+  onUpdate(){
+    this.router.navigate([`/updateNews/${this.id}`])
+  }
 }

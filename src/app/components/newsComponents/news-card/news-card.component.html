@@ -12,7 +12,7 @@
   </section>
 
   <section class="content">
-    <p>{{ news.content }}</p>
+    <p [innerHTML]="news.content"></p>
   </section>
 
   <div class="btn">
@@ -21,5 +21,15 @@
       text="Go Back"
       (btnClick)="onBack()"
     ></app-button>
+    <app-button
+    color="#4869e9"
+    text="Update"
+    (btnClick)="onUpdate()"
+  ></app-button>
+  <app-button
+    color="red"
+    text="Delete"
+    (btnClick)="onDelete(news)"
+  ></app-button>
   </div>
 </article>

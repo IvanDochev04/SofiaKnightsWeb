@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Player } from 'src/app/models/Player';
 import { PlayerService } from 'src/app/services/player-service.service';
+import { TextService } from 'src/app/services/text.service';
 
 @Component({
   selector: 'app-add-player',
   templateUrl: './add-player.component.html',
-  styleUrls: ['./add-player.component.css']
+  styleUrls: ['./add-player.component.css'],
 })
 export class AddPlayerComponent implements OnInit {
-
   fullName: string;
   nickName: string;
   birthDay: string;
@@ -20,44 +20,57 @@ export class AddPlayerComponent implements OnInit {
   positions: string;
   number: number;
   profilePictureUrl: string;
-  constructor(private playerService: PlayerService, private router:Router) { }
+  constructor(
+    private playerService: PlayerService,
+    private router: Router,
+    private textService: TextService
+  ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  onBack(): void {
+    this.router.navigate(['/players']);
   }
   onSubmit() {
     if (!this.fullName) {
       alert('Please add a Full Name!');
       return;
-    } if (!this.nickName) {
+    }
+    if (!this.nickName) {
       alert('Please add a Nickname!');
       return;
-    } if (!this.birthDay) {
+    }
+    if (!this.birthDay) {
       alert('Please choose a birthday!');
       return;
-    } if (!this.nationality) {
+    }
+    if (!this.nationality) {
       alert('Please add a nationality!');
       return;
-    } if (!this.height) {
+    }
+    if (!this.height) {
       alert('Please add height!');
       return;
-    } if (!this.weight) {
+    }
+    if (!this.weight) {
       alert('Please add weight!');
       return;
-    } if (!this.positions) {
+    }
+    if (!this.positions) {
       alert('Please add positions!');
       return;
-    } if (!this.profilePictureUrl) {
+    }
+    if (!this.profilePictureUrl) {
       alert('Please add a picture file name');
       return;
     }
 
     const newPlayer: Player = {
-      id : 0,
+      id: 0,
       fullName: this.fullName,
       nickName: this.nickName,
       birthDay: this.birthDay,
       nationality: this.nationality,
-      selfDiscription: this.selfDiscription,
+      selfDiscription: this.textService.escape(this.selfDiscription),
       height: this.height,
       weight: this.weight,
       positions: this.positions,
@@ -65,7 +78,7 @@ export class AddPlayerComponent implements OnInit {
       profilePictureUrl: this.profilePictureUrl,
     };
 
-  this.playerService.createPlayer(newPlayer).subscribe();
-  this.router.navigate(['/players'])
+    this.playerService.createPlayer(newPlayer).subscribe();
+    this.router.navigate(['/players']);
   }
 }

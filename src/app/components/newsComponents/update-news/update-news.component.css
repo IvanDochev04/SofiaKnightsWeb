@@ -1,0 +1,54 @@
+.add-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.form-control{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    width: 60%;
+}
+.form-control label{
+    font-size: 30px;
+}
+.form-control input{
+    font-size: 20px;
+    
+    resize: vertical;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+.selfdesc input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+.btn{
+    background-color: #FFB600;
+  border: none;
+  width: 60%;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 20px 0px;
+  }
+textarea{
+    height: 200px;
+}
+.back{
+    margin: 10px;
+}
