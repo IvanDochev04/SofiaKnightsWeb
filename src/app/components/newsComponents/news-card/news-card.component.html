@@ -22,14 +22,16 @@
       (btnClick)="onBack()"
     ></app-button>
     <app-button
-    color="#4869e9"
-    text="Update"
-    (btnClick)="onUpdate()"
-  ></app-button>
-  <app-button
-    color="red"
-    text="Delete"
-    (btnClick)="onDelete(news)"
-  ></app-button>
+      *ngIf="isUserAdmin"
+      color="#4869e9"
+      text="Update"
+      (btnClick)="onUpdate()"
+    ></app-button>
+    <app-button
+      *ngIf="isUserAdmin"
+      color="red"
+      text="Delete"
+      (btnClick)="onDelete(news)"
+    ></app-button>
   </div>
 </article>

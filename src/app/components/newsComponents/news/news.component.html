@@ -1,4 +1,6 @@
-<div class="btn">
+<div
+*ngIf="isUserAdmin"
+ class="btn">
 <app-button
 (btnClick)="redirectToCreateNews()"
 text="Add News">

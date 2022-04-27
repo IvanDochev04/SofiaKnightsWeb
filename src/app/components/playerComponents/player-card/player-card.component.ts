@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Player } from 'src/app/models/Player';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { PlayerService } from 'src/app/services/player-service.service';
 
 @Component({
@@ -11,9 +12,14 @@ import { PlayerService } from 'src/app/services/player-service.service';
 export class PlayerCardComponent implements OnInit {
   id:string;
   player: Player;
+  isUserAdmin : boolean;
+
   constructor(private playerService: PlayerService,
      private activatedRoute : ActivatedRoute,
-      private router: Router) { }
+      private router: Router,
+      private authService:AuthenticationService) { 
+        this.isUserAdmin = this.authService.isUserAdmin();
+      }
 sub;
   ngOnInit(): void {
     this.sub = this.activatedRoute.paramMap.subscribe(params => this.id = params.get('id'))

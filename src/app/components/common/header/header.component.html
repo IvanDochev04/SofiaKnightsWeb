@@ -25,10 +25,22 @@
         >
       </article>
       <app-button
-        *ngIf="hasRoute('/')"
-        color="{{ showAddTask ? 'orange' : 'black' }}"
-        text="{{ showAddTask ? 'Home' : 'Add' }}"
-        (btnClick)="toggleAddTask()"
+        *ngIf="!isUserAuthenticated"
+        color="orange"
+        text="Login"
+        (btnClick)="login()"
+      ></app-button>
+      <app-button
+        *ngIf="!isUserAuthenticated"
+        color="orange"
+        text="Register"
+        (btnClick)="register()"
+      ></app-button>
+      <app-button
+        *ngIf="isUserAuthenticated"
+        color="orange"
+        text="Log out"
+        (btnClick)="logout()"
       ></app-button>
     </article>
   </section>
@@ -36,7 +48,11 @@
     <article class="menu-options">
       <ul>
         <li>
-          <a [ngStyle]="{ color: hasRoute('/') ? '#FFB600' : 'white' }" href="/"
+          <a
+            [ngStyle]="{ color: hasRoute('/') ? '#FFB600' : 'white' }"
+            [routerLink]="['/']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
             >HOME
             <i class="fas fa-chevron-down"></i>
           </a>
@@ -44,7 +60,9 @@
         <li>
           <a
             [ngStyle]="{ color: hasRoute('/players') ? '#FFB600' : 'white' }"
-            href="/players"
+            [routerLink]="['/players']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
           >
             PLAYERS
             <i class="fas fa-chevron-down"></i>
@@ -53,36 +71,49 @@
         <li>
           <a
             [ngStyle]="{ color: hasRoute('/fixtures') ? '#FFB600' : 'white' }"
-            href="/fixtures"
+            [routerLink]="['/fixtures']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
           >
             FIXTURES
             <i class="fas fa-chevron-down"></i>
           </a>
         </li>
         <li>
-          <a href=""
+          <a
+            [ngStyle]="{ color: hasRoute('/news') ? '#FFB600' : 'white' }"
+            [routerLink]="['/news']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >NEWS
+            <i class="fas fa-chevron-down"></i>
+          </a>
+        </li>
+        <li
+        *ngIf="isUserAuthenticated">
+          <a
+           href=""
             >TACTICS
             <i class="fas fa-chevron-down"></i>
           </a>
         </li>
-        <li>
-          <a href=""
-            >FEATURES
-            <i class="fas fa-chevron-down"></i>
-          </a>
-        </li>
-        <li>
+        <li
+        *ngIf="isUserAuthenticated">
           <a
-            [ngStyle]="{ color: hasRoute('/news') ? '#FFB600' : 'white' }"
-            href="/news"
-            >NEWS
+            [ngStyle]="{ color: hasRoute('/privacy') ? '#FFB600' : 'white' }"
+            [routerLink]="['/privacy']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >PRIVACY
             <i class="fas fa-chevron-down"></i>
           </a>
         </li>
         <li>
           <a
             [ngStyle]="{ color: hasRoute('/about') ? '#FFB600' : 'white' }"
-            href="/about"
+            [routerLink]="['/about']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
           >
             ABOUT US
             <i class="fas fa-chevron-down"></i>
@@ -90,8 +121,6 @@
         </li>
       </ul>
     </article>
-    <article class="menu-search">
-      
-    </article>
+    <article class="menu-search"></article>
   </section>
 </header>

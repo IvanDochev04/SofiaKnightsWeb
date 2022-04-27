@@ -16,24 +16,31 @@ export class AddNewsComponent implements OnInit {
   shortDescription: string;
   content: string;
   pictureUrl: string;
-  date: string ;
-  constructor(private newsService: NewsService, private router: Router,private textService:TextService) {}
+  date: string;
+  constructor(
+    private newsService: NewsService,
+    private router: Router,
+    private textService: TextService,
+  ) {}
 
   ngOnInit(): void {}
   onBack(): void {
     this.router.navigate(['/news']);
- }
+  }
   onSubmit() {
     if (!this.title) {
       alert('Please add a title!');
       return;
-    } if (!this.shortDescription) {
+    }
+    if (!this.shortDescription) {
       alert('Please add a short description!');
       return;
-    } if (!this.content) {
+    }
+    if (!this.content) {
       alert('Please choose a content!');
       return;
-    } if (!this.pictureUrl) {
+    }
+    if (!this.pictureUrl) {
       alert('Please add a picture file name');
       return;
     }
@@ -44,12 +51,12 @@ export class AddNewsComponent implements OnInit {
       shortDescription: this.shortDescription,
       content: this.textService.escape(this.content),
       pictureUrl: this.pictureUrl,
-      date: formatDate(Date.now(),'yyyy/MM/dd','en').toString()
+      date: formatDate(Date.now(), 'yyyy/MM/dd', 'en').toString(),
     };
     console.log(newNews);
-debugger;
-  this.newsService.createNews(newNews).subscribe();
-  
-  this.router.navigate(['/news'])
+    debugger;
+    this.newsService.createNews(newNews).subscribe();
+
+    this.router.navigate(['/news']);
   }
 }

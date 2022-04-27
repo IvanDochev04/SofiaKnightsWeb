@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UiService } from '../../../services/ui.service';
 import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -12,15 +13,17 @@ export class HeaderComponent implements OnInit {
   title: string = 'Task Tracker';
   isRouteHere: boolean;
   subscription: Subscription;
+  public isUserAuthenticated: boolean;
 
-  constructor(private uiService: UiService, private router: Router) {
+  constructor(private uiService: UiService, private router: Router, private _authService: AuthenticationService,private activatedRoute: ActivatedRoute) {
     this.subscription = this.uiService
       .onToggle()
       .subscribe((value) => (this.isRouteHere = value));
-  }
+       this.isUserAuthenticated =  this._authService.isUserAuthenticated();
 
-  ngOnInit(): void {}
-  
+  }
+  ngOnInit(): void {
+  }
    ngOnDestroy() {
      // Unsubscribe to ensure no memory leaks
      this.subscription.unsubscribe();
@@ -32,5 +35,16 @@ export class HeaderComponent implements OnInit {
 
   hasRoute(route: string) {
     return this.router.url === route;
+  }
+  register(){
+    this.router.navigate(['/authentication/register'])
+  }
+  login(){
+    this.router.navigate(['/authentication/login'])
+  }
+  logout () {
+    this._authService.logout();
+    this.router.navigate(["/"]);
+    window.location.reload();
   }
 }
