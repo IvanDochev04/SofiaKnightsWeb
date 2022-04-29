@@ -1,0 +1,15 @@
+<div
+*ngIf="isUserAdmin"
+ class="btn">
+  <app-button
+  (btnClick)="redirectToAddAward()"
+  text="Add award">
+  </app-button>
+</div>
+<div class="awardContainer">
+  <app-award-item
+    *ngFor="let award of awards"
+    [award]="award"
+    [isUserAdmin]="isUserAdmin"
+  ></app-award-item>
+</div>

@@ -1,0 +1,25 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { AwardItemComponent } from './award-item.component';
+
+describe('AwardItemComponent', () => {
+  let component: AwardItemComponent;
+  let fixture: ComponentFixture<AwardItemComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ AwardItemComponent ]
+    })
+    .compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AwardItemComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

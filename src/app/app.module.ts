@@ -38,6 +38,10 @@ import { UpdateFixtureComponent } from './components/fixtureComponents/update-fi
 import { AddTeamComponent } from './components/fixtureComponents/add-team/add-team.component';
 import { TeamsComponent } from './components/fixtureComponents/teams/teams.component';
 import { UpdateTeamComponent } from './components/fixtureComponents/update-team/update-team.component';
+import { AwardComponent } from './components/awardComponents/award/award.component';
+import { AwardItemComponent } from './components/awardComponents/award-item/award-item.component';
+import { AddAwardComponent } from './components/awardComponents/add-award/add-award.component';
+import { UpdateAwardComponent } from './components/awardComponents/update-award/update-award.component';
 
 const appRoutes: Routes = [
   { path: 'authentication', loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule) },
@@ -61,9 +65,14 @@ const appRoutes: Routes = [
   { path: 'fixtures', component: FixtureComponent },
   { path: 'addFixture', component: AddFixtureComponent, canActivate: [AdminGuard] },
   { path: 'updateFixture/:id', component: UpdateFixtureComponent, canActivate: [AdminGuard] },
+
   { path: 'teams', component: TeamsComponent,canActivate: [AdminGuard]},
   { path: 'addTeam', component: AddTeamComponent, canActivate: [AdminGuard] },
   { path: 'updateTeam/:id', component: UpdateTeamComponent, canActivate: [AdminGuard] },
+
+  { path: 'awards', component: AwardComponent},
+  { path: 'addAward', component: AddAwardComponent, canActivate: [AdminGuard] },
+  { path: 'updateAward/:id', component: UpdateAwardComponent, canActivate: [AdminGuard] },
 
   { path: '**', component: NotFound404Component },
 ];
@@ -101,6 +110,10 @@ export function tokenGetter() {
     AddTeamComponent,
     TeamsComponent,
     UpdateTeamComponent,
+    AwardComponent,
+    AwardItemComponent,
+    AddAwardComponent,
+    UpdateAwardComponent,
   ],
   imports: [
     BrowserModule,

@@ -90,6 +90,17 @@
             <i class="fas fa-chevron-down"></i>
           </a>
         </li>
+        <li>
+          <a
+            [ngStyle]="{ color: hasRoute('/awards') ? '#FFB600' : 'white' }"
+            [routerLink]="['/awards']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            AWARDS
+            <i class="fas fa-chevron-down"></i>
+          </a>
+        </li>
         <li
         *ngIf="isUserAuthenticated">
           <a

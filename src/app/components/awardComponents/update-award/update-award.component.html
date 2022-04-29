@@ -1,0 +1,51 @@
+<div class="back">
+    <app-button color="#FFB600" text="Go Back" (btnClick)="onBack()"></app-button>
+  </div>
+  <form class="add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="award.name"
+        id="name"
+        placeholder="Add name"
+      />
+    </div>
+    <div class="form-control">
+      <label for="description">Short Description</label>
+      <input
+        type="text"
+        name="description"
+        [(ngModel)]="award.description"
+        id="description"
+        placeholder="Add short description"
+      />
+    </div>
+    <div class="form-control">
+      <label for="personName">Winner</label>
+      <input
+        type="text"
+        name="personName"
+        [(ngModel)]="award.personName"
+        id="personName"
+        placeholder="Add winner"
+      />
+    </div>
+    <div class="form-control">
+      <label for="pictureUrl">Picture file name</label>
+      <input
+        type="text"
+        name="pictureUrl"
+        [(ngModel)]="award.pictureUrl"
+        id="pictureUrl"
+        placeholder="Choose pic name from assets folder"
+      />
+    </div>
+    <div class="form-control form-control-check">
+      <label for="year">Year</label>
+      <input type="date" name="year" [(ngModel)]="award.year" id="year" />
+    </div>
+    <input type="submit" value="Update award" class="btn btn-block" />
+  </form>
+  

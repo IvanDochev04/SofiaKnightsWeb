@@ -1,0 +1,35 @@
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img
+        src="../../../../assets/trophy.png"
+        alt="Avatar"
+        style="width: 300px; height: 300px"
+      />
+      <h1>{{ award.name }}</h1>
+      <p>{{ award.description }}</p>
+      <p>{{ award.year }}</p>
+
+    </div>
+    <div class="flip-card-back">
+      <img
+        src="../../../../assets/{{ award.pictureUrl }}"
+        alt="Avatar"
+        style="width: 300px; height: 300px"
+      />
+      <h1>{{ award.personName }}</h1>
+      <div class="buttons" *ngIf="isUserAdmin">
+        <app-button
+          color="lightblue"
+          text="Update"
+          (btnClick)="update()"
+        ></app-button>
+        <app-button
+          color="red"
+          text="Delete"
+          (btnClick)="delete(fixture)"
+        ></app-button>
+      </div>
+    </div>
+  </div>
+</div>
