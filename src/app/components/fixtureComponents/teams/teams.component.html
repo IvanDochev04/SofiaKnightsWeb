@@ -1,0 +1,27 @@
+<div class="button">
+<app-button  text="Go Back" (btnClick)="onBack()">
+</app-button>
+<app-button  text="Add Team" (btnClick)="add()"> </app-button>
+</div>
+<div class="container">
+  <ul>
+    <li *ngFor="let team of teams">
+      <div class="info">
+        <div class="img">
+          <img src="../../../../assets/{{ team.logoUrl }}" alt="" />
+        </div>
+        <h2>{{ team.name }}</h2>
+      </div>
+      <div class="buttons">
+        <app-button
+          color="lightblue"
+          text="Update"
+          (btnClick)="update(team.id)"
+        >
+        </app-button>
+        <app-button color="red" text="Delete" (btnClick)="delete(team)">
+        </app-button>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -33,6 +33,11 @@ import { PrivacyComponent } from './components/privacy/privacy.component';
 import { ForbiddenComponent } from './components/common/forbidden/forbidden.component';
 import { AdminGuard } from './guards/admin.guard';
 import { NotFound404Component } from './components/common/not-found404/not-found404.component';
+import { AddFixtureComponent } from './components/fixtureComponents/add-fixture/add-fixture.component';
+import { UpdateFixtureComponent } from './components/fixtureComponents/update-fixture/update-fixture.component';
+import { AddTeamComponent } from './components/fixtureComponents/add-team/add-team.component';
+import { TeamsComponent } from './components/fixtureComponents/teams/teams.component';
+import { UpdateTeamComponent } from './components/fixtureComponents/update-team/update-team.component';
 
 const appRoutes: Routes = [
   { path: 'authentication', loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule) },
@@ -54,6 +59,12 @@ const appRoutes: Routes = [
   { path: 'updateNews/:id', component: UpdateNewsComponent, canActivate: [AdminGuard] },
   
   { path: 'fixtures', component: FixtureComponent },
+  { path: 'addFixture', component: AddFixtureComponent, canActivate: [AdminGuard] },
+  { path: 'updateFixture/:id', component: UpdateFixtureComponent, canActivate: [AdminGuard] },
+  { path: 'teams', component: TeamsComponent,canActivate: [AdminGuard]},
+  { path: 'addTeam', component: AddTeamComponent, canActivate: [AdminGuard] },
+  { path: 'updateTeam/:id', component: UpdateTeamComponent, canActivate: [AdminGuard] },
+
   { path: '**', component: NotFound404Component },
 ];
 export function tokenGetter() {
@@ -85,6 +96,11 @@ export function tokenGetter() {
     PrivacyComponent,
     ForbiddenComponent,
     NotFound404Component,
+    AddFixtureComponent,
+    UpdateFixtureComponent,
+    AddTeamComponent,
+    TeamsComponent,
+    UpdateTeamComponent,
   ],
   imports: [
     BrowserModule,

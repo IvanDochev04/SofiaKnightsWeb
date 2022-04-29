@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UiService } from '../../../services/ui.service';
-import { Subscription } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
@@ -10,16 +10,16 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  title: string = 'Task Tracker';
   isRouteHere: boolean;
   subscription: Subscription;
-  public isUserAuthenticated: boolean;
+  public userAuthenticated: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
+  public isUserAuthenticated:boolean;
 
   constructor(private uiService: UiService, private router: Router, private _authService: AuthenticationService,private activatedRoute: ActivatedRoute) {
     this.subscription = this.uiService
       .onToggle()
       .subscribe((value) => (this.isRouteHere = value));
-       this.isUserAuthenticated =  this._authService.isUserAuthenticated();
+       this.userAuthenticated.subscribe(value => this.isUserAuthenticated = value)
 
   }
   ngOnInit(): void {
@@ -29,12 +29,13 @@ export class HeaderComponent implements OnInit {
      this.subscription.unsubscribe();
    }
 
-  toggleAddTask() {
-    this.uiService.toggleAddTask();
+  toggleButtons() {
+    this.userAuthenticated.next(this._authService.isUserAuthenticated());
   }
 
   hasRoute(route: string) {
     return this.router.url === route;
+    
   }
   register(){
     this.router.navigate(['/authentication/register'])
@@ -45,6 +46,5 @@ export class HeaderComponent implements OnInit {
   logout () {
     this._authService.logout();
     this.router.navigate(["/"]);
-    window.location.reload();
   }
 }

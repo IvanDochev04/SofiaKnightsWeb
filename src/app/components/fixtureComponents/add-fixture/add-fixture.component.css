@@ -1,0 +1,77 @@
+.add-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-self: center;
+    
+    width: 100%;
+}
+.teams, .points{
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.teams select{
+    font-size: 20px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 50%;
+
+}
+.add-form .column
+{
+    margin: 20px;
+    width: 40%;
+
+}
+.form-control{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-self: center;
+    margin :15px;
+    width: 50%;
+}
+.form-control label{
+    font-size: 30px;
+    width: 50%;
+}
+.form-control input{
+    font-size: 20px;
+    
+    resize: vertical;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+.selfdesc input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+.btn{
+    background-color: #FFB600;
+  border: none;
+  width: 150px;
+  height: 40px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 20px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.back{
+    margin: 15px;
+}

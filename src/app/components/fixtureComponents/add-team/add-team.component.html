@@ -1,0 +1,29 @@
+<div class="button">
+    <app-button  text="Go Back" (btnClick)="onBack()">
+    </app-button>
+    </div>
+<form class="add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="logoUrl">Logo file name</label>
+        <input
+          type="text"
+          name="logoUrl"
+          [(ngModel)]="logoUrl"
+          id="logoUrl"
+          placeholder="Add logo file name"
+        />
+      </div>
+      <div class="form-control">
+        <label for="name">Team name</label>
+        <input
+          type="text"
+          name="name"
+          [(ngModel)]="name"
+          id="name"
+          placeholder="Add name"
+        />
+      </div>
+
+<input type="submit" value="Save team" class="btn btn-block" />
+    
+</form>

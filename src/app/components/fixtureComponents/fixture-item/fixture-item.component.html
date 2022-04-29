@@ -1,25 +1,35 @@
 <div class="fixture">
-    <div class="hometeam">
-        <div class="img">
-            <img src="../../../../assets/{{fixture.homeTeam.logoUrl}}" alt="">
-        </div>
-<h2>
-    {{fixture.homeTeam.name}}
-</h2>
+  <div class="hometeam">
+    <div class="img">
+      <img src="../../../../assets/{{ fixture.homeTeam.logoUrl }}" alt="" />
     </div>
-    <div class="info">
-        <p>{{fixture.date}}</p>
-<p 
- class="score"
- *ngIf = "checkDate(fixture.date)">{{fixture.homePoints}} - {{fixture.awayPoints}}</p>
-<p>{{fixture.location}}</p>
+    <h2>
+      {{ fixture.homeTeam.name }}
+    </h2>
+  </div>
+  <div class="info">
+    <p>{{ fixture.date }}</p>
+    <p class="score" *ngIf="checkDate(fixture.date)">
+      {{ fixture.homePoints }} - {{ fixture.awayPoints }}
+    </p>
+    <p>{{ fixture.location }}</p>
+    <div class="buttons"
+*ngIf="isUserAdmin"
+>
+      <app-button
+        color="lightblue"
+        text="Update"
+        (btnClick)="update()"
+      ></app-button>
+      <app-button color="red" text="Delete" (btnClick)="delete(fixture)"></app-button>
     </div>
-    <div class="awayteam">
-        <h2>
-            {{fixture.awayTeam.name}}
-        </h2>
-        <div class="img">
-            <img src="../../../../assets/{{fixture.awayTeam.logoUrl}}" alt="">
-        </div>
+  </div>
+  <div class="awayteam">
+    <h2>
+      {{ fixture.awayTeam.name }}
+    </h2>
+    <div class="img">
+      <img src="../../../../assets/{{ fixture.awayTeam.logoUrl }}" alt="" />
     </div>
+  </div>
 </div>

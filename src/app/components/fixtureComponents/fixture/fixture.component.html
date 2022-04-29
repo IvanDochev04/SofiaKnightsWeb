@@ -1,3 +1,15 @@
+<div
+*ngIf="isUserAdmin"
+ class="btn">
+<app-button
+(btnClick)="add()"
+text="Add fixture">
+</app-button>
+<app-button
+(btnClick)="teams()"
+text="Teams">
+</app-button>
+</div>
 <div class="fixtureContainer">
     <app-fixture-item
       *ngFor="let fixture of fixtures"

@@ -27,3 +27,11 @@ width: 400px;
 width: 400px;
 
 }
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+app-button{
+    margin: 5px;
+}

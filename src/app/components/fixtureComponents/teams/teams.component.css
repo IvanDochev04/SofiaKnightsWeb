@@ -1,0 +1,41 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 80%;
+    align-self: center;
+
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    margin: 5px;
+    border: 2px solid grey;
+    background-color: lightgrey;
+
+}
+.info,.buttons
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+}
+.button{
+    margin: 10px;
+}
+.img{
+    height: 100px;
+    margin: 10px;
+}
+
+.img img{
+    height: inherit;
+}

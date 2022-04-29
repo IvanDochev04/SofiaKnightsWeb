@@ -1,0 +1,65 @@
+<div class="back">
+  <app-button color="#FFB600" text="Go Back" (btnClick)="onBack()"></app-button>
+</div>
+<form class="add-form" (ngSubmit)="onSubmit()">
+  <div></div>
+  <div class="teams">
+    <div class="form-control">
+      <label for="homeTeam">Home team</label>
+      <select name="homeTeamId" id="homeTeamId" [(ngModel)]="homeTeamId">
+        <option selected disabled hidden>-----Select-----</option>
+        <option *ngFor="let team of teams"
+         value={{team.id}}>{{ team.name }}</option>
+      </select>
+    </div>
+    <div class="form-control">
+      <label for="awayTeam">Away team</label>
+      <select name="awayTeamId" id="awayTeamId" [(ngModel)]="awayTeamId">
+        <option value="none" selected disabled hidden>-----Select-----</option>
+        <option *ngFor="let team of teams" value={{team.id}}>{{ team.name }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="points">
+    <div class="form-control">
+      <label for="homePoints">Home team points</label>
+      <input
+        type="number"
+        name="homePoints"
+        [(ngModel)]="homePoints"
+        id="homePoints"
+        placeholder="0"
+      />
+    </div>
+    <div class="form-control">
+      <label for="awayPoints">Away team points</label>
+      <input
+        type="number"
+        name="awayPoints"
+        [(ngModel)]="awayPoints"
+        id="awayPoints"
+        placeholder="0"
+      />
+    </div>
+    
+  </div>
+  <div class="form-control">
+    <label for="location">Location</label>
+    <input
+      type="text"
+      name="location"
+      [(ngModel)]="location"
+      id="location"
+      placeholder="Add location"
+    />
+  </div>
+  <div class="form-control form-control-check">
+    <label for="date">Date</label>
+    <input type="date" name="date" [(ngModel)]="date" id="date" />
+    <label for="time">Time</label>
+    <input type="time" name="time" [(ngModel)]="time" id="time" />
+</div>
+<input type="submit" value="Save fixture" class="btn btn-block" />
+
+</form>

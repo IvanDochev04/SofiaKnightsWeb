@@ -35,9 +35,9 @@ export class FixtureService {
     return this.http.put<Fixture>(url, fixture, httpOptions);
   }
 
-  createFixture(fixture: Fixture): Observable<Fixture> {
+  createFixture(fixture): Observable<Fixture> {
     const url = `${this.apiUrl}/create`;
-    return this.http.post<Fixture>(this.apiUrl, fixture, httpOptions);
+    return this.http.post<Fixture>(url, fixture, httpOptions);
   }
 }
 
