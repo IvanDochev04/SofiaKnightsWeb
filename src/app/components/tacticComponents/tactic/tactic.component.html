@@ -1,0 +1,23 @@
+
+
+<div
+ class="btn">
+<app-button
+
+*ngIf="isUserAdmin"
+(btnClick)="redirectToCreateTactic()"
+text="Add tactic">
+</app-button>
+
+<app-button
+(btnClick)="onBack()"
+text="Go Back">
+</app-button>
+</div>
+<div class="container">
+  <app-tactic-item
+    *ngFor="let tactic of tacticList"
+    [tactic]="tactic"
+    (onClick)="redirectToTacticCard(tactic)"
+  ></app-tactic-item>
+</div>

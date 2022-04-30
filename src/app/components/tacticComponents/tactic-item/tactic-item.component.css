@@ -1,0 +1,39 @@
+.tactic {
+    background: #f4f4f4;
+    margin: 20px 40px;
+    padding: 10px 20px;
+    cursor: pointer;
+    height: 400px;
+    width: 550px;
+  }
+  
+  .tactic .item
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: inherit;
+    padding: 20px;
+  }
+  .tactic .item .img
+  {
+height: 250px;
+width: 500px;
+  }
+  .tactic .item .img img{
+height: inherit;
+width: inherit;
+  }
+  .tactic h3 {
+    
+    justify-content: space-between;
+  }
+  .tactic p {
+    margin: 0px;
+  }
+  .tactic p date{
+    margin-bottom: 10px;
+    justify-self: start;
+  }
+  

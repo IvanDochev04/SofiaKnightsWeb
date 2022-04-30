@@ -18,8 +18,8 @@ export class AwardItemComponent implements OnInit {
 update(){
 this.router.navigate([`updateAward/${this.award.id}`])
 }
-delete(){
-  this.awardService.deleteAward(this.award);
+delete(award){
+  this.awardService.deleteAward(award).subscribe();
   window.location.reload();
 }
 }

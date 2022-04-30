@@ -1,0 +1,70 @@
+<div class="back">
+    <app-button
+    color="#FFB600"
+    text="Go Back"
+    (btnClick)="onBack()"
+    ></app-button>
+    </div>
+    <form class="add-form" (ngSubmit)="onSubmit()">
+      <div class="form-control">
+        <label for="name">Play name</label>
+        <input
+          type="text"
+          name="name"
+          [(ngModel)]="name"
+          id="name"
+          placeholder="Add name"
+        />
+      </div>
+      <div class="form-control">
+        <label for="type">Play type</label>
+        <select name="type" id="type" [(ngModel)]="type">
+            <option value="Offence">Offence</option>
+            <option value="Defense">Defense</option>
+
+        </select>
+      </div>
+      <div class="form-control">
+        <label for="formation">Formation</label>
+        <input
+          type="text"
+          name="formation"
+          [(ngModel)]="formation"
+          id="formation"
+          placeholder="Add formation"
+        />
+      </div>
+      <div class="form-control">
+        <label for="concept">Concept</label>
+        <input
+          type="text"
+          name="concept"
+          [(ngModel)]="concept"
+          id="concept"
+          placeholder="Add concept"
+        />
+      </div>
+    
+      <div class="form-control selfdesc">
+        <label for="description">Description</label>
+        <textarea
+          type="text"
+          name="description"
+          [(ngModel)]="description"
+          id="description"
+          placeholder="Add description"
+        ></textarea>
+      </div>
+      <div class="form-control">
+        <label for="pictureUrl">Picture file name</label>
+        <input
+          type="text"
+          name="pictureUrl"
+          [(ngModel)]="pictureUrl"
+          id="pictureUrl"
+          placeholder="Choose pic name from assets folder"
+        />
+        <input type="submit" value="Save tactic" class="btn btn-block" />
+      </div>
+    </form>
+    

@@ -1,5 +1,5 @@
 <header>
-{{toggleButtons()}}
+  {{ toggleButtons() }}
   <section class="contacts">
     <article class="contacts-img">
       <img src="../../../../assets/logo.png" alt="logo" />
@@ -101,16 +101,17 @@
             <i class="fas fa-chevron-down"></i>
           </a>
         </li>
-        <li
-        *ngIf="isUserAuthenticated">
+        <li *ngIf="isUserAuthenticated">
           <a
-           href=""
+            [ngStyle]="{ color: hasRoute('/tactic') ? '#FFB600' : 'white' }"
+            [routerLink]="['/tactic']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
             >TACTICS
             <i class="fas fa-chevron-down"></i>
           </a>
         </li>
-        <li
-        *ngIf="isUserAuthenticated">
+        <li *ngIf="isUserAuthenticated">
           <a
             [ngStyle]="{ color: hasRoute('/privacy') ? '#FFB600' : 'white' }"
             [routerLink]="['/privacy']"

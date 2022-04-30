@@ -42,6 +42,12 @@ import { AwardComponent } from './components/awardComponents/award/award.compone
 import { AwardItemComponent } from './components/awardComponents/award-item/award-item.component';
 import { AddAwardComponent } from './components/awardComponents/add-award/add-award.component';
 import { UpdateAwardComponent } from './components/awardComponents/update-award/update-award.component';
+import { TacticComponent } from './components/tacticComponents/tactic/tactic.component';
+import { TacticItemComponent } from './components/tacticComponents/tactic-item/tactic-item.component';
+import { TacticCardComponent } from './components/tacticComponents/tactic-card/tactic-card.component';
+import { AddTacticComponent } from './components/tacticComponents/add-tactic/add-tactic.component';
+import { UpdateTacticComponent } from './components/tacticComponents/update-tactic/update-tactic.component';
+import { TacticHomeComponent } from './components/tacticComponents/tactic-home/tactic-home.component';
 
 const appRoutes: Routes = [
   { path: 'authentication', loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule) },
@@ -73,6 +79,15 @@ const appRoutes: Routes = [
   { path: 'awards', component: AwardComponent},
   { path: 'addAward', component: AddAwardComponent, canActivate: [AdminGuard] },
   { path: 'updateAward/:id', component: UpdateAwardComponent, canActivate: [AdminGuard] },
+
+  { path: 'tactic', component: TacticHomeComponent,canActivate: [AuthGuard]},
+  { path: 'tactic/:type', component: TacticComponent ,canActivate: [AuthGuard] },
+  { path: 'tactic/:type/:id', component: TacticCardComponent ,canActivate: [AuthGuard]},
+  { path: 'addTactic', component: AddTacticComponent, canActivate: [AdminGuard] },
+  { path: 'updateTactic/:id', component: UpdateTacticComponent, canActivate: [AdminGuard] },
+
+
+
 
   { path: '**', component: NotFound404Component },
 ];
@@ -114,6 +129,12 @@ export function tokenGetter() {
     AwardItemComponent,
     AddAwardComponent,
     UpdateAwardComponent,
+    TacticComponent,
+    TacticItemComponent,
+    TacticCardComponent,
+    AddTacticComponent,
+    UpdateTacticComponent,
+    TacticHomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -53,8 +53,6 @@ export class AddNewsComponent implements OnInit {
       pictureUrl: this.pictureUrl,
       date: formatDate(Date.now(), 'yyyy/MM/dd', 'en').toString(),
     };
-    console.log(newNews);
-    debugger;
     this.newsService.createNews(newNews).subscribe();
 
     this.router.navigate(['/news']);
